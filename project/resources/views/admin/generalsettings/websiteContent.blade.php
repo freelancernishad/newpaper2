@@ -42,9 +42,9 @@
                             <input type="text" class="input-field" placeholder="{{ __('Write Your Site Title Here') }}" name="title" value="{{$data->title}}" required="">
                           </div>
                         </div>
-						
-						
-						
+
+
+
 						                        <div class="row justify-content-center">
                           <div class="col-lg-3">
                             <div class="left-area">
@@ -56,7 +56,7 @@
                             <input type="text" class="input-field" placeholder="{{ __('Write Your Facebook Page username Here') }}" name="facebook_page_url" value="{{$data->facebook_page_url}}" required="">
                           </div>
                         </div>
-						
+
                         <div class="row justify-content-center">
                           <div class="col-lg-3">
                             <div class="left-area">
@@ -73,13 +73,13 @@
 
                           </div>
                         </div>
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
 			                        <div class="row justify-content-center">
                           <div class="col-lg-3">
                             <div class="left-area">
@@ -95,10 +95,10 @@
                               </div>
 
                           </div>
-                        </div>			
-						
-						
-						
+                        </div>
+
+
+
 						                        <div class="row justify-content-center">
                           <div class="col-lg-3">
                             <div class="left-area">
@@ -115,8 +115,8 @@
 
                           </div>
                         </div>
-						
-						
+
+
 						                        <div class="row justify-content-center">
                           <div class="col-lg-3">
                             <div class="left-area">
@@ -133,17 +133,17 @@
 
                           </div>
                         </div>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
+
+
+
+
 
                         <div class="row justify-content-center">
                           <div class="col-lg-3">
@@ -217,7 +217,7 @@
 
 
 
-                       
+
 
                             <div class="row justify-content-center">
                             <div class="col-lg-3">
@@ -228,8 +228,7 @@
                             </div>
                             <div class="col-lg-6">
                               @php
-                                $timezone_identifiers =
-                                    DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+                                $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
 
                                 echo "<select name='time_zone'>";
 
@@ -382,7 +381,7 @@
                                         Live TV *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -413,7 +412,7 @@
                                         Notice *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -442,7 +441,7 @@
                                         Search Console Verification Code
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -451,7 +450,7 @@
                                   </div>
                               </div>
                             </div>
-							
+
 			<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -459,7 +458,7 @@
                                         Adsense Verification Code
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -476,7 +475,7 @@
                                         Header 728X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -485,9 +484,9 @@
                                   </div>
                               </div>
                             </div>
-							
-							
-							
+
+
+
 													<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -495,7 +494,7 @@
                                         Homepage 1 728X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -503,9 +502,9 @@
                                   <textarea name="header1_728" required="">{{$data->header1_728}}</textarea>
                                   </div>
                               </div>
-                            </div>	
-							
-														
+                            </div>
+
+
 													<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -513,7 +512,7 @@
                                         Homepage 2 728X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -529,7 +528,7 @@
                                         Homepage 3 728X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -538,7 +537,7 @@
                                   </div>
                               </div>
                             </div>
-							
+
 																											<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -546,7 +545,7 @@
                                         Homepage 4 728X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -555,11 +554,11 @@
                                   </div>
                               </div>
                             </div>
-							
-							
-							
-							
-							
+
+
+
+
+
 						<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -567,7 +566,7 @@
                                         Homepage 1 970X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -575,8 +574,8 @@
                                   <textarea name="homepageads1_970" required="">{{$data->homepageads1_970}}</textarea>
                                   </div>
                               </div>
-                            </div>	
-							
+                            </div>
+
 													<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -584,7 +583,7 @@
                                         Homepage 2 970X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -593,8 +592,8 @@
                                   </div>
                               </div>
                             </div>
-							
-							
+
+
 																				<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -602,7 +601,7 @@
                                         Homepage 3 970X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -611,7 +610,7 @@
                                   </div>
                               </div>
                             </div>
-							
+
 																											<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -619,7 +618,7 @@
                                         Homepage 4 970X90 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -628,13 +627,13 @@
                                   </div>
                               </div>
                             </div>
-							
-							
-							
-							
-							
-							
-						
+
+
+
+
+
+
+
 						<div class="row justify-content-center">
                               <div class="col-lg-3">
                                 <div class="left-area">
@@ -642,7 +641,7 @@
                                         Sidebar Ads 1 *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -661,7 +660,7 @@
                                         Sidebar 2 Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
@@ -679,7 +678,7 @@
                                         Sidebar Big Ads *
                                         <p class="sub-heading">{{(__('In Any Language'))}}</p>
                                     </h4>
-                                  
+
                                 </div>
                               </div>
                               <div class="col-lg-6">
