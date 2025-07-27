@@ -236,7 +236,7 @@
                                         Please Select Timezone
                                       </option>";
 
-                                $n = 419;
+                                $n = 418;
                                 for($i = 0; $i < $n; $i++) {
                                   if($data->time_zone == $timezone_identifiers[$i]){
                                         $msg = 'selected';

@@ -142,7 +142,7 @@ class GeneralSettingsController extends Controller
 
         $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
 
-        dd($timezone_identifiers);
+
 
         $data = GeneralSettings::find(1);
         return view('admin.generalsettings.websiteContent',compact('data','timezone_identifiers'));
