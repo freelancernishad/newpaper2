@@ -11,7 +11,7 @@
 <!--=======secroll-section start========-->
 
 
-
+{{-- 
 <div class="row">
     <div class="col-md-12 scrool">
         <div class="col-md-2 scrool_1">
@@ -26,7 +26,7 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 
 
 
