@@ -218,7 +218,7 @@
 
 
 
-{{--
+
                             <div class="row justify-content-center">
                             <div class="col-lg-3">
                               <div class="left-area">
@@ -249,7 +249,7 @@
                                 echo "</select>";
                               @endphp
                             </div>
-                          </div> --}}
+                          </div>
 
 
                         <div class="row justify-content-center">
