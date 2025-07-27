@@ -23,7 +23,7 @@ class DashboardController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    
+
     public function index(){
         $default_language = Language::where('is_default',1)->first();
         $data['total_post'] = Post::all()->count();
@@ -64,7 +64,7 @@ class DashboardController extends Controller
         }
         //--- Validation Section Ends
         $input = $request->all();
-    
+
         if ($file = $request->file('photo'))
         {
             $name = time().$file->getClientOriginalName();
@@ -122,24 +122,24 @@ class DashboardController extends Controller
     }
 
 
-    public function clear_bkup()
-    {
-        $destination  = public_path().'/install';
-        $bkuplink = "";
-        $chk = file_get_contents('backup.txt');
-        if ($chk != ""){
-            unlink(public_path($chk));
-        }
+    // public function clear_bkup()
+    // {
+    //     $destination  = public_path().'/install';
+    //     $bkuplink = "";
+    //     $chk = file_get_contents('backup.txt');
+    //     if ($chk != ""){
+    //         unlink(public_path($chk));
+    //     }
 
-        if (is_dir($destination)) {
-            $this->deleteDir($destination);
-        }
-        $handle = fopen('backup.txt','w+');
-        fwrite($handle,"");
-        fclose($handle);
-        //return "No Backup File Generated.";
-        return redirect()->back()->with('success','Backup file Deleted Successfully!');
-    }
+    //     if (is_dir($destination)) {
+    //         $this->deleteDir($destination);
+    //     }
+    //     $handle = fopen('backup.txt','w+');
+    //     fwrite($handle,"");
+    //     fclose($handle);
+    //     //return "No Backup File Generated.";
+    //     return redirect()->back()->with('success','Backup file Deleted Successfully!');
+    // }
 
 
     public function activation()
@@ -209,41 +209,41 @@ class DashboardController extends Controller
 
 
 
-    public function movescript(){
-        ini_set('max_execution_time', 3000);
+    // public function movescript(){
+    //     ini_set('max_execution_time', 3000);
 
-        $destination  = public_path().'/install';
-        $chk = file_get_contents('backup.txt');
-        if ($chk != ""){
-            unlink(public_path($chk));
-        }
+    //     $destination  = public_path().'/install';
+    //     $chk = file_get_contents('backup.txt');
+    //     if ($chk != ""){
+    //         unlink(public_path($chk));
+    //     }
 
-        if (is_dir($destination)) {
-            $this->deleteDir($destination);
-        }
+    //     if (is_dir($destination)) {
+    //         $this->deleteDir($destination);
+    //     }
 
-        $src = base_path().'/vendor/update';
-        $this->recurse_copy($src,$destination);
-        $files = public_path();
-        $bkupname = 'geniusCart-By-geniusOcean-'.date('Y-m-d').'.zip';
+    //     $src = base_path().'/vendor/update';
+    //     $this->recurse_copy($src,$destination);
+    //     $files = public_path();
+    //     $bkupname = 'geniusCart-By-geniusOcean-'.date('Y-m-d').'.zip';
 
-        $zipper = new \Chumper\Zipper\Zipper;
+    //     $zipper = new \Chumper\Zipper\Zipper;
 
-        $zipper->make($bkupname)->add($files);
+    //     $zipper->make($bkupname)->add($files);
 
-        $zipper->remove($bkupname);
+    //     $zipper->remove($bkupname);
 
-        $zipper->close();
+    //     $zipper->close();
 
-        $handle = fopen('backup.txt','w+');
-        fwrite($handle,$bkupname);
-        fclose($handle);
+    //     $handle = fopen('backup.txt','w+');
+    //     fwrite($handle,$bkupname);
+    //     fclose($handle);
 
-        if (is_dir($destination)) {
-            $this->deleteDir($destination);
-        }
-        return response()->json(['status' => 'success','backupfile' => url($bkupname),'filename' => $bkupname],200);
-    }
+    //     if (is_dir($destination)) {
+    //         $this->deleteDir($destination);
+    //     }
+    //     return response()->json(['status' => 'success','backupfile' => url($bkupname),'filename' => $bkupname],200);
+    // }
 
     public function recurse_copy($src,$dst) {
         $dir = opendir($src);
@@ -261,22 +261,22 @@ class DashboardController extends Controller
         closedir($dir);
     }
 
-    public function deleteDir($dirPath) {
-        if (! is_dir($dirPath)) {
-            throw new InvalidArgumentException("$dirPath must be a directory");
-        }
-        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-            $dirPath .= '/';
-        }
-        $files = glob($dirPath . '*', GLOB_MARK);
-        foreach ($files as $file) {
-            if (is_dir($file)) {
-                self::deleteDir($file);
-            } else {
-                unlink($file);
-            }
-        }
-        rmdir($dirPath);
-    }
+    // public function deleteDir($dirPath) {
+    //     if (! is_dir($dirPath)) {
+    //         throw new InvalidArgumentException("$dirPath must be a directory");
+    //     }
+    //     if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+    //         $dirPath .= '/';
+    //     }
+    //     $files = glob($dirPath . '*', GLOB_MARK);
+    //     foreach ($files as $file) {
+    //         if (is_dir($file)) {
+    //             self::deleteDir($file);
+    //         } else {
+    //             unlink($file);
+    //         }
+    //     }
+    //     rmdir($dirPath);
+    // }
 
 }

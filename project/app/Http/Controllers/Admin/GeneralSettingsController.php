@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\GeneralSettings;
 use Validator;
+use DateTimeZone;
+use Illuminate\Http\Request;
+use App\Models\GeneralSettings;
+use App\Http\Controllers\Controller;
 
 class GeneralSettingsController extends Controller
 {
@@ -24,7 +25,7 @@ class GeneralSettingsController extends Controller
         'footer_logo'       => 'mimes:jpeg,jpg,png,svg',
 		'lazy_baner'       => 'mimes:jpeg,jpg,png,svg',
 		'og_baner'       => 'mimes:jpeg,jpg,png,svg',
-		
+
     ];
 
     private function setEnv($key, $value,$prev)
@@ -60,7 +61,7 @@ class GeneralSettingsController extends Controller
             @unlink('assets/images/logo/'.$data->footer_logo);
             $input['footer_logo'] = $name;
         }
-		
+
 
 		 if($request->hasFile('lazy_baner')){
             $lazy_baner = $request->file('lazy_baner');
@@ -69,7 +70,7 @@ class GeneralSettingsController extends Controller
             @unlink('assets/images/logo/'.$data->lazy_baner);
             $input['lazy_baner'] = $name;
         }
-		
+
 		if($request->hasFile('og_baner')){
             $og_baner = $request->file('og_baner');
             $name = time().$og_baner->getClientOriginalName();
@@ -77,13 +78,13 @@ class GeneralSettingsController extends Controller
             @unlink('assets/images/logo/'.$data->og_baner);
             $input['og_baner'] = $name;
         }
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
         if($request->hasFile('favicon')){
             $favicon = $request->file('favicon');
             $name = time().$favicon->getClientOriginalName();
@@ -138,8 +139,10 @@ class GeneralSettingsController extends Controller
         return view('admin.generalsettings.loader',compact('data'));
     }
     public function websiteContent(){
+
+        $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
         $data = GeneralSettings::find(1);
-        return view('admin.generalsettings.websiteContent',compact('data'));
+        return view('admin.generalsettings.websiteContent',compact('data','timezone_identifiers'));
     }
     public function popularTags(){
         $data = GeneralSettings::find(1);

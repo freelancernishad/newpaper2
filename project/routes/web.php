@@ -698,6 +698,7 @@ Route::get('/tag/{search}','Front\FrontendController@searchByTag')->name('tag.se
 Route::get('/{category}/{slug}','Front\FrontendController@details')->name('frontend.postBySubcategory.details');
 
 Route::post('the/genius/ocean/2441139', 'Front\FrontendController@subscription');
+
 Route::get('finalize', 'Front\FrontendController@finalize');
 
 

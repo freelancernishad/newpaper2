@@ -228,7 +228,7 @@
                             </div>
                             <div class="col-lg-6">
                               @php
-                                $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+                                $timezone_identifiers = $timezone_identifiers;
 
                                 echo "<select name='time_zone'>";
 
