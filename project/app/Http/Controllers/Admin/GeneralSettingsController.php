@@ -140,7 +140,10 @@ class GeneralSettingsController extends Controller
     }
     public function websiteContent(){
 
-       return $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+        $timezone_identifiers = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+
+        dd($timezone_identifiers);
+
         $data = GeneralSettings::find(1);
         return view('admin.generalsettings.websiteContent',compact('data','timezone_identifiers'));
     }
