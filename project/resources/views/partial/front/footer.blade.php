@@ -1,122 +1,126 @@
 
-            <!--======= Footer Section Start============-->
-            <div class="footer-section">
+     <style>
+
+            .footer_section {
+                margin: 20px 0 0;
+                background: #212121;
+                padding: 20px 0;
+            }
+            .footer_color {
+    color: #fff;
+}
+
+.editorial_text {
+    border-right: 2px solid #730101;
+    padding: 0 20px;
+    font-size: 15px;
+}
+.footer_logo {
+    width: 70%;
+}
+.bottom-footer-section {
+    background: #0f0e0e;
+    padding: 15px 0;
+}
+.design-developed {
+    text-align: right;
+    padding-right: 20px;
+}
+     </style>
+
+     <!--=======================
+                            themeBazar_Footer_section_End
+                        ==========================-->
+
+        <footer class="footer_section footer_color">
+            <div class="container">
                 <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-01">
-                               <div class="menu"><ul>
-<li class="page_item page-item-1147"><a href="{{ URL::to('/reporter') }}">প্রতিনিধির তালিকা</a></li>
-<li class="page_item page-item-1208"><a href="{{ URL::to('/photo') }}">ফটো গ্যালারী</a></li>
-<li class="page_item page-item-1211"><a href="{{ URL::to('/video') }}">ভিডিও গ্যালারী</a></li>
-</ul></div>
-                           </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-01">
-                               <div class="menu"><ul>
-<li class="page_item page-item-1147"><a href="{{ URL::to('/reporter') }}">প্রতিনিধির তালিকা</a></li>
-<li class="page_item page-item-1208"><a href="{{ URL::to('/photo') }}">ফটো গ্যালারী</a></li>
-<li class="page_item page-item-1211"><a href="{{ URL::to('/video') }}">ভিডিও গ্যালারী</a></li>
-</ul></div>
-                           </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-01">
-                                <div class="menu"><ul>
-<li class="page_item page-item-1147"><a href="{{ URL::to('/reporter') }}">প্রতিনিধির তালিকা</a></li>
-<li class="page_item page-item-1208"><a href="{{ URL::to('/photo') }}">ফটো গ্যালারী</a></li>
-<li class="page_item page-item-1211"><a href="{{ URL::to('/video') }}">ভিডিও গ্যালারী</a></li>
-</ul></div>
-                           </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-01">
-                               <div class="menu"><ul>
-<li class="page_item page-item-1147"><a href="{{ URL::to('/reporter') }}">প্রতিনিধির তালিকা</a></li>
-<li class="page_item page-item-1208"><a href="{{ URL::to('/photo') }}">ফটো গ্যালারী</a></li>
-<li class="page_item page-item-1211"><a href="{{ URL::to('/video') }}">ভিডিও গ্যালারী</a></li>
-</ul></div>
-                           </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-01">
-						        @php
-                                    $footer_menus = \App\Models\Page::where('placement','footer')->where('status',1)->get();
-                                @endphp
-                               <div class="menu"><ul>
-							   @foreach ($footer_menus as $menu)
-<li class="page_item page-item-1147"><a href="{{ route('dynamic.page',$menu->slug)}}">{{ $menu->title }}</a></li>
-@endforeach
-</ul></div>
-                           </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-2 col-xs-4">
-                           <div class="footer-menu-last">
-                               <div class="menu"><ul>
-<li class="page_item page-item-1147"><a href="{{ URL::to('/reporter') }}">প্রতিনিধির তালিকা</a></li>
-<li class="page_item page-item-1208"><a href="{{ URL::to('/photo') }}">ফটো গ্যালারী</a></li>
-<li class="page_item page-item-1211"><a href="{{ URL::to('/video') }}">ভিডিও গ্যালারী</a></li>
-</ul></div>
-                           </div>
-                        </div>
-
-
+                    <div class="col-lg-4 col-md-4">
+                        <h4 class="editorial_text">
+                            <p align="right">সম্পাদক ও প্রকাশক : {{ $gs->prokashok }}</p><p align="right">নির্বাহী সম্পাদক : {{ $gs->sompadok }}<br></p><p align="right">বার্তা সম্পাদক : {{ $gs->barta_sompadok }}</p><p align="right"><br></p>
+                        </h4>
                     </div>
+                    <div class="col-lg-4 col-md-4">
+                        <h4 class="editorial_text">
+                            <p align="left">অফিস : {{ $gs->adress }} </p><p align="left">ইমেইল : {{ $gs->email }} </p><p align="left">মোবাইল : {{ $gs->phone }}<br></p>
+                        </h4>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+						     @php
+								Session::has('language') ? $lid=Session::get('language') : $lid = (DB::table('languages')->where('is_default','=',1)->first()->id)
+							@endphp
 
-                <div class="footer-wrpp">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="footer-content-rihgt">
-								অফিস : {{ $gs->adress }}, মোবাইল নং: {{ $gs->phone }} ইমেইল: {{ $gs->email }}
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="footer-content-left">
-                               অফিস : {{ $gs->adress }}, মোবাইল নং: {{ $gs->phone }} ইমেইল: {{ $gs->email }}
-                            </div>
+							@php
+								$header_footer_logo = d_logo($lid);
+							@endphp
+                        <div class="footer_logo">
+                          <a href="{{route('frontend.index')}}"> <img src="{{asset('assets/images/logo/'.$gs->footer_logo)}}" alt="{{ $gs->title }}"> </a>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
+            </div>
+        </footer>
 
 
+        <div class="bottom-footer-section footer_color">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
 
-
-
-
-
-
- <div class="root">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="root_01">
-                            {!! $gs->copyright_text !!} </div>
-
-                        </div>
-                       <div class="col-md-6 col-sm-6">
-                           <div class="root_02">
-                                সকল কারিগরী সহযোগিতায় <a href='https://softwebsys.com/' target='_blank' title='https://softwebsys.com'>Softweb System Solution</a>
-                            </div>
+                       <div class="design">
+                      {!! $gs->copyright_text !!}
                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+
+                       <div class="design-developed">
+                        সকল কারিগরী সহযোগিতায় <a href='https://softwebsys.com/' target='_blank' title='https://softwebsys.com'>Softweb System Solution</a>
+                       </div>
+
                     </div>
 
                 </div>
-                <a href="#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+
+                <a href="#" class="themesBazar_scroll"><i class="las la-level-up-alt"></i></a>
+            </div>
+        </div>
+
+
+
+
+
+
+                                <!--=======================
+                                   themeBazar_Footer_section_End
+                                ==========================-->
+
+                <!--============Footer Scroll  start==============-->
+                 {{-- <div class="footer_scroll">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer_left">
+                    <span> নোটিশ   </span>
+                    </div>
+                    <div class="footer_right rightCSS ">
+                        <div>
+
+                            <a href="#"> <i class="las la-bullseye"></i>  {{ $gs->notice_text }} </a>
+
+
+                        </div><!-- End main div -->
+                    </div>
+
+
+
+
+
+                </div>
             </div>
 
 
-            <!--======= Footer Section End============-->
+        </div> --}}
 
 
-
-            </div>
-  </section>
+            <!--============footer Scroll End==============-->
