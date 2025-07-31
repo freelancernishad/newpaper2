@@ -110,6 +110,73 @@ displayTime();
         <!--=======Logo & banner-section End========-->
 
 
+
+
+            <!-------menu option stsrt-------->
+
+
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-sm-12">
+                    <div id="menu-area" class="menu_area">
+                        <div class="menu_bottom">
+                            <nav role="navigation" class="navbar navbar-default mainmenu">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <!-- Collection of nav links and other content for toggling -->
+                                <div id="navbarCollapse" class="collapse navbar-collapse">
+                                    <div class="menu-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a6%a6-container"><ul id="menu-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a6%a6" class="nav navbar-nav">
+
+                                @foreach ($categories as $category)
+								 @if ($loop->first)
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-212" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-212 active"><a title="{{$category->title}}" href="{{ route('frontend.index')}}">{{$category->title}}</a></li>
+                                    @endif
+                                    @if ($category->child()->count() > 0)
+                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1167" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1167 dropdown"><a title="{{$category->title}}" href="{{ route('frontend.category',$category->slug)}}" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">{{$category->title}} <span class="caret"></span></a>
+                                    <ul role="menu" class=" dropdown-menu" >
+                                    @foreach ($category->child as $child)
+                                        <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1170"><a title="{{$child->title}}" href="{{ route('frontend.postBySubcategory.details',[$category->slug,$child->slug])}}">{{$child->title}}</a></li>
+                                    @endforeach
+                                    </ul>
+                                                </li>
+                                @else
+                                @if ($loop->first)
+                                @else
+                                        <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="{{$category->title}}" href="{{ route('frontend.category',$category->slug)}}">{{$category->title}}</a></li>
+                                @endif
+                                    @endif
+                                @endforeach
+
+                                @if (!auth()->user())
+                                <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="লগইন" href="{{ route('front.LogReg') }}">লগইন</a></li>
+                                                                @endif
+                                                        @if (auth()->user())
+                                                            @php
+                                                                $data = auth()->user();
+                                                            @endphp
+                            <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="সাংবাদিক প্যানেল" href="{{ route('user.dashboard') }}">সাংবাদিক প্যানেল</a></li>
+                    @endif
+
+                        </ul>
+                    </div>                                </div>
+                            </nav>
+
+                        </div><!-- /.header_bottom -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
         <!--=======secroll-section start========-->
 
 
@@ -154,66 +221,3 @@ displayTime();
 
 
         <!--=======secroll-section End========-->
-
-
-
-            <!-------menu option stsrt-------->
-
-
-            <div class="row">
-                <div class="col-xs-12 col-md-12 col-sm-12">
-                    <div id="menu-area" class="menu_area">
-                        <div class="menu_bottom">
-                            <nav role="navigation" class="navbar navbar-default mainmenu">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                                <div class="navbar-header">
-                                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <!-- Collection of nav links and other content for toggling -->
-                                <div id="navbarCollapse" class="collapse navbar-collapse">
-                                    <div class="menu-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a6%a6-container"><ul id="menu-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a6%a6" class="nav navbar-nav">
-
-                                @foreach ($categories as $category)
-								 @if ($loop->first)
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-212" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-212 active"><a title="{{$category->title}}" href="{{ route('frontend.index')}}">{{$category->title}}</a></li>
- @endif
- @if ($category->child()->count() > 0)
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1167" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1167 dropdown"><a title="{{$category->title}}" href="{{ route('frontend.category',$category->slug)}}" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">{{$category->title}} <span class="caret"></span></a>
-<ul role="menu" class=" dropdown-menu" >
-@foreach ($category->child as $child)
-	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1170"><a title="{{$child->title}}" href="{{ route('frontend.postBySubcategory.details',[$category->slug,$child->slug])}}">{{$child->title}}</a></li>
-@endforeach
-</ul>
-</li>
-					@else
-					@if ($loop->first)
-					@else
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="{{$category->title}}" href="{{ route('frontend.category',$category->slug)}}">{{$category->title}}</a></li>
-             @endif
-				@endif
-			@endforeach
-
-			 @if (!auth()->user())
-			<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="লগইন" href="{{ route('front.LogReg') }}">লগইন</a></li>
-		                                     @endif
-									@if (auth()->user())
-									     @php
-											 $data = auth()->user();
-										 @endphp
-		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-273" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-273"><a title="সাংবাদিক প্যানেল" href="{{ route('user.dashboard') }}">সাংবাদিক প্যানেল</a></li>
-@endif
-
-</ul></div>                                </div>
-                            </nav>
-
-                        </div><!-- /.header_bottom -->
-
-                    </div>
-                </div>
-
-            </div>

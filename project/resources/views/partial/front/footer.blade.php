@@ -4,7 +4,7 @@
             .footer_section {
                 margin: 20px 0 0;
                 background: #212121;
-                padding: 20px 0;
+                padding: 20px 0 0px 0;
             }
             .footer_color {
     color: #fff;
