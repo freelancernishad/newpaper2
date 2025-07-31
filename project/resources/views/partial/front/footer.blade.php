@@ -37,12 +37,12 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <h4 class="editorial_text">
-                            <p align="right">সম্পাদক ও প্রকাশক : {{ $gs->prokashok }}</p><p align="right">নির্বাহী সম্পাদক : {{ $gs->sompadok }}<br></p><p align="right">বার্তা সম্পাদক : {{ $gs->barta_sompadok }}</p><p align="right"><br></p>
+                            <p align="right">সম্পাদক ও প্রকাশক : {{ $gs->prokashok }}</p><p align="right">নির্বাহী সম্পাদক : {{ $gs->sompadok }}<br/></p><p align="right">বার্তা সম্পাদক : {{ $gs->barta_sompadok }}</p><p align="right"><br/></p>
                         </h4>
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <h4 class="editorial_text">
-                            <p align="left">অফিস : {{ $gs->adress }} </p><p align="left">ইমেইল : {{ $gs->email }} </p><p align="left">মোবাইল : {{ $gs->phone }}<br></p>
+                            <p align="left">অফিস : {{ $gs->adress }} </p><p align="left">ইমেইল : {{ $gs->email }} </p><p align="left">মোবাইল : {{ $gs->phone }}<br/></p>
                         </h4>
                     </div>
                     <div class="col-lg-4 col-md-4">
