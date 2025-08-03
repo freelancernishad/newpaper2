@@ -3,6 +3,7 @@
 <script src="https://bangla.plus/scripts/bangladatetoday.min.js"></script>
 <script>dateToday('date-today', 'bangla');</script>
 
+
 <script>
                         setInterval(displayTime, 1000);
 
@@ -55,14 +56,26 @@ displayTime();
             <!--=======header-section Start========-->
                <div class="header-section">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-sm-4">
-                         <div class="date">আজকের তারিখঃ	<span id ="Clock" onload="displayTime()"></span> | <span id="date-today"></span> বঙ্গাব্দ</div>
+                        <div class="col-md-6 col-sm-6 col-sm-6">
+                        <div class="date">
+                            আজকের তারিখঃ <span id="Clock" onload="displayTime()"></span> |
+                            <span id="date-today"></span> বঙ্গাব্দ  |
+                            <span id="date-today-en"></span> <span id="english-date"></span>
+                        </div>
+                        <script>
+                            // Show English date in #english-date
+                            document.addEventListener("DOMContentLoaded", function() {
+                                const today = new Date();
+                                const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+                                document.getElementById('english-date').textContent = today.toLocaleDateString('en-US', options);
+                            });
+                        </script>
 
                         </div>
-                        <div class="col-md-4 col-sm-4 col-sm-4">
+                        {{-- <div class="col-md-4 col-sm-4 col-sm-4">
 
-                        </div>
-                        <div class="col-md-4 col-sm-4">
+                        </div> --}}
+                        <div class="col-md-6 col-sm-6">
                             <div class="top_hdr_social">
                                 <ul>
 
