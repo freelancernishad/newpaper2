@@ -58,9 +58,10 @@ displayTime();
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-sm-6">
                         <div class="date">
-                            আজকের তারিখঃ <span id="Clock" onload="displayTime()"></span> |
+                            আজকের তারিখঃ 
+                            <span id="date-today-en"></span> <span id="english-date"></span>  |
                             <span id="date-today"></span> বঙ্গাব্দ  |
-                            <span id="date-today-en"></span> <span id="english-date"></span>
+                            <span id="Clock" onload="displayTime()"></span> 
                         </div>
                         <script>
                             // Show English date in #english-date
