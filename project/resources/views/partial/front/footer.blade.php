@@ -37,7 +37,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <h4 class="editorial_text">
-                            <p align="right">সম্পাদক ও প্রকাশক : {{ $gs->prokashok }}</p>
+                            <p align="right">সম্পাদক ও প্রকাশক :- <br/> {{ $gs->prokashok }}</p>
                             {{-- <p align="right">নির্বাহী সম্পাদক : {{ $gs->sompadok }}<br/></p> --}}
                             {{-- <p align="right">বার্তা সম্পাদক : {{ $gs->barta_sompadok }}</p><p align="right"><br/></p> --}}
                         </h4>
