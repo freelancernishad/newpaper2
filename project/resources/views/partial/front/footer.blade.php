@@ -44,8 +44,8 @@
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <h4 class="editorial_text">
-                            <p align="left">অফিস : {{ $gs->adress }} </p>
-                            <p align="left">মোবাইল : {!! $gs->phone !!}<br/></p>
+                            <p align="left">অফিস : <br/>{!! $gs->adress !!} </p>
+                            <p align="left">মোবাইল : <br/>{!! $gs->phone !!}<br/></p>
                             <p align="left">ইমেইল : {{ $gs->email }} </p>
                         </h4>
                     </div>
